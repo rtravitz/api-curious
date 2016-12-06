@@ -16,9 +16,9 @@
 
 @font-face {
   font-family: Roboto;
-  src: url("/assets/Roboto-Regular.ttf") format("truetype")
-  src: url("/assets/Roboto-Light.ttf") format("truetype")
-  src: url("/assets/Roboto-Thin.ttf") format("truetype")
+  src: url("/assets/Roboto-Regular.ttf") format("truetype");
+  src: url("/assets/Roboto-Light.ttf") format("truetype");
+  src: url("/assets/Roboto-Thin.ttf") format("truetype");
 }
 
 
