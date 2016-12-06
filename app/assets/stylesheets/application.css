@@ -13,3 +13,19 @@
  *= require_tree .
  *= require_self
  */
+
+@font-face {
+  font-family: Roboto;
+  src: url("/assets/Roboto-Regular.ttf") format("truetype")
+  src: url("/assets/Roboto-Light.ttf") format("truetype")
+  src: url("/assets/Roboto-Thin.ttf") format("truetype")
+}
+
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+a {
+  text-decoration: none;
+}

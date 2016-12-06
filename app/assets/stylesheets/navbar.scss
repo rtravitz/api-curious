@@ -1,3 +1,4 @@
+
 .site-header {
   padding-top: 20px;
   padding-bottom: 20px;
@@ -5,4 +6,31 @@
   background-color: #fff;
   border-bottom: 1px solid rgba(0, 0, 0, 0.075);
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  overflow: auto;
+}
+
+.site-header-nav-main {
+  .nav-item {
+    position: relative;
+    float: left;
+    padding: 8px 10px 8px 10px;
+    font-size: 16px;
+    border-top: 0;
+    line-height: 20px;
+    color: #3c4146;
+  }
+  .secondary-nav-item {
+    display: inline-block;
+    float: left;
+    line-height: 20px;
+    padding: 8px 8px 8px 8px;
+    font-size: 13px;
+    color: #000;
+  }
+
+}
+
+
+.nav-secondary {
+  float: right;
 }
