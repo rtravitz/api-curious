@@ -1,19 +1,4 @@
-<nav class="site-header site-header-nav-main">
-  <div class="container">
-    <a href="#" class="nav-item">Personal</a>
-    <a href="#" class="nav-item">Open source</a>
-    <a href="#" class="nav-item">Business</a>
-    <a href="#" class="nav-item">Explore</a>
-    <div class="nav-secondary">
-      <input type="text" placeholder="Search Github" class="form-control"/>
-      <a href="#" class="secondary-nav-item">Pricing</a>
-      <a href="#" class="secondary-nav-item">Blog</a>
-      <a href="#" class="secondary-nav-item">Support</a>
-      <%= link_to "Sign in", login_path, class: "btn" %>
-      <a href="#" class="btn-primary">Sign up</a>
-    </div>
-  </div>
-</nav>
+<%= render partial: 'shared/home_navbar' %>
 <div class="jumbotron">
   <div class="float-md-left col-md-7">
     <h1 class="alt-h1 lh-condensed text-white mb-3">How people build software</h1>

@@ -30,7 +30,39 @@
 
 }
 
+.header-nav-link {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 20px;
+  color: #333;
+  display: block;
+  padding: 4px 8px;
+  text-decoration: none;
+}
+
+.navbar-thumbnail {
+  width: 20px;
+  height: 20px;
+  border-radius: 3px;
+}
+
+.navbar-octocat {
+  height: 28px;
+  width: 28px;
+  margin-right: 8px;
+  padding: 8px 8px;
+  line-height: 20px;
+}
+
+.navbar-search {
+  width: 355px !important;
+}
 
 .nav-secondary {
   float: right;
+}
+
+.reduced-width {
+  width: 85%;
 }
