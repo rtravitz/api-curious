@@ -20,6 +20,7 @@
 @import "grid.scss";
 @import "home.scss";
 @import "navbar.scss";
+@import "profile.scss";
 
 
 @font-face {
@@ -34,4 +35,9 @@ body {
 
 a {
   text-decoration: none;
+}
+
+.badge {
+  background-color: #eeeeee;
+  color: #666666;
 }

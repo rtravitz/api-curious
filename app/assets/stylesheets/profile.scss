@@ -1,0 +1,48 @@
+.profile-img {
+  border-radius: 6px;
+  width: 229px;
+}
+
+.profile-container {
+  width: 80%;
+}
+
+.v-card-name {
+  font-size: 26px;
+  line-height: 20px;
+}
+
+.v-card-username {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 15px;
+  color: #666;
+}
+
+.nav-tabs li {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+
+.nav-tabs li a:hover {
+  background-color: #fff;
+  color: #333333;
+  border: none;
+}
+
+.nav-tabs li a {
+  color: #777777;
+}
+
+.nav-tabs .active {
+  color: #333333;
+  border-bottom: solid 2px #c9510c;
+}
+
+.active a {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}

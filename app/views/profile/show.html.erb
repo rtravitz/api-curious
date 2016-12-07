@@ -1,9 +1,27 @@
 <%= render partial: "shared/navbar" %>
-<h1><%= @profile.basic_info[:name] %></h1>
-<img src=<%= @profile.basic_info[:avatar_url] %> alt="" />
-<p>Followers: <%= @profile.followers_count %></p>
-<p>Following: <%= @profile.following_count %></p>
-<p>Starred: <%= @profile.starred_count %></p>
-
-<p>Contribution Activity</p>
+<div class="container profile-container">
+  <div class="col-md-3">
+    <img src=<%= @profile.basic_info[:avatar_url] %> class="profile-img" alt="" />
+    <div class="vcard-names">
+      <h1 class="v-card-name"><%= @profile.basic_info[:name] %></span>
+      <h3 class="v-card-username"><%= @profile.basic_info[:login] %></span>
+    </div>
+  </div>
+  <div class="col-md-9">
+    <ul class="nav nav-tabs" role="tablist">
+      <li role="presentation" class="active"><a href="#overview" aria-controls="overview" role="tab" data-toggle="tab">Overview</a></li>
+      <li role="presentation" class=""><a href="#repositories" aria-controls="repositories" role="tab" data-toggle="tab">Repositories</a></li>
+      <li role="presentation" class=""><a href="#stars" aria-controls="stars" role="tab" data-toggle="tab">Stars <span class="badge"><%= @profile.starred_count %></span></a></li>
+      <li role="presentation" class=""><a href="#followers" aria-controls="followers" role="tab" data-toggle="tab">Followers <span class="badge"><%= @profile.followers_count %></span></a></li>
+      <li role="presentation" class=""><a href="#following" aria-controls="following" role="tab" data-toggle="tab">Following <span class="badge"><%= @profile.following_count %></span></a></li>
+    </ul>
+    <div class="tab-content">
+      <div role="tabpanel" class="tab-pane active" id="overview">test1</div>
+      <div role="tabpanel" class="tab-pane" id="repositories">test2</div>
+      <div role="tabpanel" class="tab-pane" id="stars">test3</div>
+      <div role="tabpanel" class="tab-pane" id="followers"></div>
+      <div role="tabpanel" class="tab-pane" id="following"></div>
+    </div>
+  </div>
+</div>
 
