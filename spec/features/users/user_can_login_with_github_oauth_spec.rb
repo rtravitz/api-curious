@@ -7,12 +7,14 @@ describe "A user can login with Github OAuth" do
     end
 
     it "they are logged in to their dashboard" do
-      visit "/"
-      stub_omniauth
-      expect(page.status_code).to eq(200)
+      VCR.use_cassette("oauth") do
+        visit "/"
+        stub_omniauth
+        expect(page.status_code).to eq(200)
 
-      click_link "Sign in"
-      expect(page.status_code).to eq(200)
+        click_link "Sign in"
+        expect(page.status_code).to eq(200)
+      end
     end
   end
 
