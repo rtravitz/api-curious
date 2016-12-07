@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 describe "A user visits the profile page" do
-  xit "They can see basic profile information" do
-    user = User.new(token: ENV["github_test_token"]) 
+  it "They can see basic profile information" do
+    user = User.new(token: ENV["github_test_token"], nickname: "rtravitz") 
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
     visit "/rtravitz"
 

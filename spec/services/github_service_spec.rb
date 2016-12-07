@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe "GithubService" do
   before :each do
-    @user = User.new(token: ENV["github_test_token"])
+    @user = User.new(token: ENV["github_test_token"], nickname: "rtravitz")
     @service = GithubService.new
   end
 
@@ -37,7 +37,7 @@ describe "GithubService" do
   end
 
   context "#basic_info" do
-    xit "returns a hash of basic biographical information" do
+    it "returns a hash of basic biographical information" do
       info = @service.basic_info(@user)
 
       expect(info.class).to eq(Hash)
@@ -61,6 +61,23 @@ describe "GithubService" do
 
       expect(orgs.class).to eq(Array)
       expect(orgs.first).to have_key(:login)
+    end
+  end
+
+  context "#repos" do
+    it "returns repos for the default user" do
+      repos = @service.repos(@user)
+
+      expect(repos.class).to eq(Array)
+      expect(repos.first).to have_key(:name)
+    end
+
+    it "returns repos for a targeted user if provided" do
+      repos = @service.repos(@user, "lsaville")
+
+      expect(repos.class).to eq(Array)
+      expect(repos.first).to have_key(:name)
+      expect(repos.first[:name]).to eq("apicurious")
     end
   end
 end

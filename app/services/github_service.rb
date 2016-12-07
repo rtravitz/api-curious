@@ -34,4 +34,10 @@ class GithubService
     JSON.parse(response.body, symbolize_names: true)
   end
 
+  def repos(user, target = nil)
+    target = user.nickname unless target
+    response = Faraday.get("#{@base_url}/users/#{target}/repos?access_token=#{user.token}")
+    JSON.parse(response.body, symbolize_names: true)
+  end
+
 end
