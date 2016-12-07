@@ -25,4 +25,15 @@ describe "GithubService" do
       expect(followers.first).to have_key(:login)
     end
   end
+
+  context "#following" do
+    it "returns the accounts the user is following" do
+      following = @service.following(@user)
+      
+      expect(following.class).to eq(Array)
+      expect(following.count).to eq(3)
+      expect(following.first).to have_key(:login)
+    end
+    
+  end
 end
