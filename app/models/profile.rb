@@ -3,10 +3,11 @@ class Profile
   def initialize(user)
     service = GithubService.new
     @starred = service.starred(user)
-    @followers = service.followers(user)
-    @following = service.following(user)
+    @followers = Follow.user_followers(user)
+    @following = Follow.user_following(user)
     @basic_info = service.basic_info(user)
     @events = service.events(user)
+    @repos = Repository.user_repositories(user)
   end
 
   def starred_count
@@ -19,6 +20,10 @@ class Profile
 
   def following_count
     @following.count
+  end
+
+  def repositories_count
+    @repos.count
   end
 
 end

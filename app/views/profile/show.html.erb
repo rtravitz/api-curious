@@ -21,11 +21,18 @@
       <div role="tabpanel" class="tab-pane" id="stars">test3</div>
       <div role="tabpanel" class="tab-pane" id="followers">
          <% @profile.followers.each do |follower|  %>
-           <a href=<%= follower[:html_url] %>><img src=<%= follower[:avatar_url] %> class="follower-icon" alt="" /></a>
-           <h4><a href=<%= follower[:html_url] %>><%= follower[:login] %></a></h4>
+           <a href=<%= follower.url %>><img src=<%= follower.image %> class="follower-icon" alt="" /></a>
+           <a href=<%= follower.url %>><%= follower.login %></a>
+           <hr>
          <% end %>
       </div>
-      <div role="tabpanel" class="tab-pane" id="following"></div>
+      <div role="tabpanel" class="tab-pane" id="following">
+         <% @profile.following.each do |user|  %>
+           <a href=<%= user.url %>><img src=<%= user.image %> class="follower-icon" alt="" /></a>
+           <a href=<%= user.url %>><%= user.login %></a>
+           <hr>
+         <% end %>
+      </div>
     </div>
   </div>
 </div>
