@@ -24,7 +24,14 @@ class GithubService
   end
 
   def events(user)
-    response = Faraday.get("#{@base_url}/users/rtravitz/events?access_token=#{user.token}")
+    response = Faraday.get("#{@base_url}/users/#{user.nickname}/events?access_token=#{user.token}")
     JSON.parse(response.body, symbolize_names: true)
   end
+
+  def organizations(user, target = nil)
+    target = user.nickname unless target
+    response = Faraday.get("#{@base_url}/users/#{target}/orgs?access_token=#{user.token}")
+    JSON.parse(response.body, symbolize_names: true)
+  end
+
 end

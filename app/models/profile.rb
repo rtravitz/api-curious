@@ -6,6 +6,7 @@ class Profile
     @followers = service.followers(user)
     @following = service.following(user)
     @basic_info = service.basic_info(user)
+    @events = service.events(user)
   end
 
   def starred_count

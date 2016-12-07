@@ -54,4 +54,13 @@ describe "GithubService" do
       expect(events.first).to have_key(:type)
     end
   end
+
+  context "#organizations" do
+    it "returns organizations for the given user" do
+      orgs = @service.organizations(@user, "jcasimir")
+
+      expect(orgs.class).to eq(Array)
+      expect(orgs.first).to have_key(:login)
+    end
+  end
 end
