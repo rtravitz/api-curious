@@ -1,11 +1,11 @@
 class Profile
-  attr_reader :starred, :followers, :following, :image
+  attr_reader :starred, :followers, :following, :basic_info
   def initialize(user)
     service = GithubService.new
     @starred = service.starred(user)
     @followers = service.followers(user)
     @following = service.following(user)
-    @image = service.image(user)
+    @basic_info = service.basic_info(user)
   end
 
   def starred_count

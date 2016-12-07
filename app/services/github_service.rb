@@ -3,9 +3,9 @@ class GithubService
     @base_url = "https://api.github.com"
   end
 
-  def image(user)
+  def basic_info(user)
     response = Faraday.get("#{@base_url}/users/#{user.nickname}?access_token=#{user.token}")
-    JSON.parse(response.body, symbolize_names: true)[:avatar_url]
+    JSON.parse(response.body, symbolize_names: true)
   end
 
   def starred(user)

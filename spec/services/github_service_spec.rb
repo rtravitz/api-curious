@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe "GithubService" do
   before :each do
-    @user = User.create(token: ENV["github_test_token"])
+    @user = User.new(token: ENV["github_test_token"])
     @service = GithubService.new
   end
 
@@ -34,6 +34,14 @@ describe "GithubService" do
       expect(following.count).to eq(3)
       expect(following.first).to have_key(:login)
     end
-    
+  end
+
+  context "#image" do
+    xit "returns the url of the user's profile image" do
+      image = @service.image(@user)
+
+      expect(image.class).to eq(String)
+      expect(image).to eq("https://avatars.githubusercontent.com/u/12074778?v=3")
+    end
   end
 end
