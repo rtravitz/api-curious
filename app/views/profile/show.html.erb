@@ -19,7 +19,12 @@
       <div role="tabpanel" class="tab-pane active" id="overview">test1</div>
       <div role="tabpanel" class="tab-pane" id="repositories">test2</div>
       <div role="tabpanel" class="tab-pane" id="stars">test3</div>
-      <div role="tabpanel" class="tab-pane" id="followers"></div>
+      <div role="tabpanel" class="tab-pane" id="followers">
+         <% @profile.followers.each do |follower|  %>
+           <a href=<%= follower[:html_url] %>><img src=<%= follower[:avatar_url] %> class="follower-icon" alt="" /></a>
+           <h4><a href=<%= follower[:html_url] %>><%= follower[:login] %></a></h4>
+         <% end %>
+      </div>
       <div role="tabpanel" class="tab-pane" id="following"></div>
     </div>
   </div>

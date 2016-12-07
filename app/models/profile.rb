@@ -20,4 +20,5 @@ class Profile
   def following_count
     @following.count
   end
+
 end

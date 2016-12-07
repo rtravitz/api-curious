@@ -3,8 +3,9 @@ class GithubService
     @base_url = "https://api.github.com"
   end
 
-  def basic_info(user)
-    response = Faraday.get("#{@base_url}/users/#{user.nickname}?access_token=#{user.token}")
+  def basic_info(user, target = nil)
+    target = user.nickname unless target
+    response = Faraday.get("#{@base_url}/users/#{target}?access_token=#{user.token}")
     JSON.parse(response.body, symbolize_names: true)
   end
 
