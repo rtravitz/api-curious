@@ -22,4 +22,9 @@ class GithubService
     response = Faraday.get("#{@base_url}/user/following?access_token=#{user.token}")
     JSON.parse(response.body, symbolize_names: true)
   end
+
+  def events(user)
+    response = Faraday.get("#{@base_url}/users/rtravitz/events?access_token=#{user.token}")
+    JSON.parse(response.body, symbolize_names: true)
+  end
 end

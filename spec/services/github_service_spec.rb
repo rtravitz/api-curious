@@ -36,12 +36,22 @@ describe "GithubService" do
     end
   end
 
-  context "#image" do
-    xit "returns the url of the user's profile image" do
-      image = @service.image(@user)
+  context "#basic_info" do
+    xit "returns a hash of basic biographical information" do
+      info = @service.basic_info(@user)
 
-      expect(image.class).to eq(String)
-      expect(image).to eq("https://avatars.githubusercontent.com/u/12074778?v=3")
+      expect(info.class).to eq(Hash)
+      expect(info[:avatar_url]).to eq("https://avatars.githubusercontent.com/u/12074778?v=3")
+      expect(info[:name]).to eq("Ryan Travitz")
+    end
+  end
+
+  context "#events" do
+    it "returns a hash of events for the user" do
+      events = @service.events(@user)
+
+      expect(events.class).to eq(Array)
+      expect(events.first).to have_key(:type)
     end
   end
 end
