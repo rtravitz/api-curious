@@ -8,9 +8,7 @@ describe "A user visits the profile page" do
       visit "/rtravitz"
 
       expect(page).to have_content("Ryan Travitz")
-      expect(page).to have_content("1")
-      expect(page).to have_content("3")
-      expect(page).to have_content("2")
+      expect(page).to have_content("rtravitz")
     end
   end
 end

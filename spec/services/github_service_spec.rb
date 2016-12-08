@@ -24,7 +24,7 @@ describe "GithubService" do
         followers = @service.followers(@user)
 
         expect(followers.class).to eq(Array)
-        expect(followers.count).to eq(1)
+        expect(followers.count).to eq(3)
         expect(followers.first).to have_key(:login)
       end
     end

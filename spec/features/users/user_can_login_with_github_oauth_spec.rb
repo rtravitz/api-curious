@@ -30,7 +30,7 @@ describe "A user can login with Github OAuth" do
           image: "test_image_link"
         },
         credentials: {
-          token: "pizza"
+          token: ENV["github_test_token"]
         }, 
         extra: {
           raw_info: {
