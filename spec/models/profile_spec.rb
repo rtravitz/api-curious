@@ -8,15 +8,10 @@ describe "Profile" do
         profile = Profile.new(user)
 
         expect(profile.starred.first).to be_instance_of(Repository) 
-
         expect(profile.followers.first).to be_instance_of(Follow) 
-
         expect(profile.following.first).to be_instance_of(Follow) 
-
         expect(profile.basic_info).to be_instance_of(Hash) 
-
         expect(profile.events.first).to be_instance_of(Hash) 
-
         expect(profile.repos.first).to be_instance_of(Repository) 
       end
     end
