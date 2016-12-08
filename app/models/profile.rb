@@ -1,5 +1,7 @@
 class Profile
-  attr_reader :starred, :followers, :following, :basic_info, :repos
+  attr_reader :events, :starred, :followers,
+              :following, :basic_info, :repos
+
   def initialize(user)
     service = GithubService.new
     @starred = Repository.starred_repositories(user)
