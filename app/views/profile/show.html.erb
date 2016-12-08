@@ -1,10 +1,10 @@
 <%= render partial: "shared/navbar" %>
 <div class="container profile-container">
   <div class="col-md-3">
-    <img src=<%= @profile.basic_info[:avatar_url] %> class="profile-img" alt="" />
+    <img src=<%= @profile.basic_info.image %> class="profile-img" alt="" />
     <div class="vcard-names">
-      <h1 class="v-card-name"><%= @profile.basic_info[:name] %></span>
-      <h3 class="v-card-username"><%= @profile.basic_info[:login] %></span>
+      <h1 class="v-card-name"><%= @profile.basic_info.name %></span>
+      <h3 class="v-card-username"><%= @profile.basic_info.login %></span>
     </div>
   </div>
   <div class="col-md-9">

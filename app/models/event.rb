@@ -2,11 +2,11 @@ class Event
   attr_reader :type, :repo, :repo_url, :created, :payload
 
   def initialize(attributes)
-    @type = attributes[:type]
-    @repo = attributes[:repo][:name]
+    @type     = attributes[:type]
+    @repo     = attributes[:repo][:name]
     @repo_url = attributes [:repo][:url]
-    @payload = attributes [:payload]
-    @created = attributes[:created_at]
+    @payload  = attributes [:payload]
+    @created  = attributes[:created_at]
   end
 
   def number_of_commits_in_push

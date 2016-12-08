@@ -7,7 +7,7 @@ class Profile
     @starred = Repository.starred_repositories(user)
     @followers = Follow.user_followers(user)
     @following = Follow.user_following(user)
-    @basic_info = service.basic_info(user)
+    @basic_info = GithubUser.load_basic_info(user)
     @events = Event.user_events(user)
     @repos = Repository.user_repositories(user)
   end
