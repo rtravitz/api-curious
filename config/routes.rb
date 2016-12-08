@@ -3,5 +3,5 @@ Rails.application.routes.draw do
   get '/auth/github', as: 'login'
   get '/auth/github/callback', to: 'sessions#create'
   get '/dashboard', to: 'dashboard#index'
-  get '/:nickname', to: 'profile#show'
+  get '/rtravitz', to: 'profile#show', as: 'profile'
 end

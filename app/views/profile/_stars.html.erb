@@ -1,0 +1,12 @@
+<% @profile.starred.each do |repo| %>
+  <a href=<%= repo.url %>><h3><%= repo.full_name %></h3></a>
+  <span><%= repo.language %></span>
+  <% if repo.stargazers_count > 0 %>
+    <span> ⭑ <%= repo.stargazers_count %></span>
+  <% end %>
+  <% if repo.forks_count > 0 %>
+    <span><%= repo.forks_count %> <%= pluralize(repo.forks_count, 'Fork') %></span>
+  <% end %>
+  <span>Updated <%= repo.updated_ago_in_words %></span>
+  <hr>
+<% end %>

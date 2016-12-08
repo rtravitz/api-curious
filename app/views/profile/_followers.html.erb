@@ -1,0 +1,6 @@
+<% @profile.followers.each do |follower|  %>
+ <a href=<%= follower.url %>><img src=<%= follower.image %> class="follower-icon" alt="" /></a>
+ <a href=<%= follower.url %>><%= follower.login %></a>
+ <hr>
+<% end %>
+

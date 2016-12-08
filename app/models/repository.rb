@@ -22,6 +22,13 @@ class Repository
     end
   end
 
+  def self.starred_repositories(user)
+    service = GithubService.new
+    service.starred(user).map do |repo_hash|
+      Repository.new(repo_hash)
+    end
+  end
+
   def updated_ago_in_words
     "#{time_ago_in_words(updated)} ago"
   end

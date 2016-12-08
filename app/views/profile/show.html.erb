@@ -16,35 +16,20 @@
       <li role="presentation" class=""><a href="#following" aria-controls="following" role="tab" data-toggle="tab">Following <span class="badge"><%= @profile.following_count %></span></a></li>
     </ul>
     <div class="tab-content">
-      <div role="tabpanel" class="tab-pane active" id="overview">test1</div>
-      <div role="tabpanel" class="tab-pane" id="repositories">
-        <% @profile.repos.each do |repo| %>
-          <a href=<%= repo.url %>><h2><%= repo.name %></h2></a>
-          <span><%= repo.language %></span>
-          <% if repo.stargazers_count > 0 %>
-            <span> ⭑ <%= repo.stargazers_count %></span>
-          <% end %>
-          <% if repo.forks_count > 0 %>
-            <span><%= repo.forks_count %></span>
-          <% end %>
-          <span><%= repo.updated_ago_in_words %></span>
-          <hr>
-        <% end %>
+      <div role="tabpanel" class="tab-pane active" id="overview">
+        test1
       </div>
-      <div role="tabpanel" class="tab-pane" id="stars">test3</div>
+      <div role="tabpanel" class="tab-pane" id="repositories">
+        <%= render partial: "repositories" %>
+      </div>
+      <div role="tabpanel" class="tab-pane" id="stars">
+        <%= render partial: "stars" %>
+      </div>
       <div role="tabpanel" class="tab-pane" id="followers">
-         <% @profile.followers.each do |follower|  %>
-           <a href=<%= follower.url %>><img src=<%= follower.image %> class="follower-icon" alt="" /></a>
-           <a href=<%= follower.url %>><%= follower.login %></a>
-           <hr>
-         <% end %>
+        <%= render partial: "followers" %>
       </div>
       <div role="tabpanel" class="tab-pane" id="following">
-         <% @profile.following.each do |user|  %>
-           <a href=<%= user.url %>><img src=<%= user.image %> class="follower-icon" alt="" /></a>
-           <a href=<%= user.url %>><%= user.login %></a>
-           <hr>
-         <% end %>
+        <%= render partial: "following" %>
       </div>
     </div>
   </div>
