@@ -8,7 +8,7 @@ describe "Repository" do
   end
 
   context "instance variables" do
-    it "responds to a lanuage" do
+    it "responds to a language" do
       expect(@repo.language).to eq("Ruby")
     end
 
