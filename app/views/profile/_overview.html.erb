@@ -1,0 +1,7 @@
+<% @profile.events.each do |event|  %>
+  <% if event.type == "PushEvent" %>
+    <span><%= event.number_of_commits_in_push %> </span><span>commits in </span><span><a href=<%= event.repo_url %>><%= event.repo %></a> </span><span><%= event.created_ago_in_words %></span>
+     <hr>
+  <% end %>
+<% end %>
+

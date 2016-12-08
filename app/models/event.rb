@@ -1,4 +1,6 @@
 class Event
+  include ActionView::Helpers::DateHelper
+
   attr_reader :type, :repo, :repo_url, :created, :payload
 
   def initialize(attributes)
@@ -11,6 +13,10 @@ class Event
 
   def number_of_commits_in_push
     payload[:size]
+  end
+
+  def created_ago_in_words
+    "#{time_ago_in_words(created)} ago"
   end
 
   def self.user_events(user)
